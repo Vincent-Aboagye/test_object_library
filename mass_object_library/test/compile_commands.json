@@ -1,0 +1,36 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-O2",
+            "-g",
+            "-I../include",
+            "-I.",
+            "-o",
+            "run_test",
+            "tests.c"
+        ],
+        "directory": "/home/vagrant/mass-testing-library/test",
+        "file": "tests.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-O2",
+            "-g",
+            "-I../include",
+            "-I.",
+            "-o",
+            "run_test",
+            "main.c"
+        ],
+        "directory": "/home/vagrant/mass-testing-library/test",
+        "file": "main.c"
+    }
+]

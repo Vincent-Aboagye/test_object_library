@@ -1,0 +1,6 @@
+
+*.so
+*.d
+*.o
+*.a
+test/run_test

@@ -1,0 +1,31 @@
+CC = gcc  # C compiler
+CFLAGS = TCE -g0 -Iinclude
+LDFLAGS =
+RM = rm -f   # rm command
+TARGET_LIB = ./bin/libmasstesting.a  # target lib
+AR = ar
+MKDIR = mkdir -p
+
+SRCS = src/circle.c \
+    src/rectangle.c \
+    src/square.c \
+    src/triangle.c \
+    src/error.c
+
+OBJS = $(SRCS:.c=.o)
+
+.PHONY: all
+all: ${TARGET_LIB}
+
+$(TARGET_LIB): $(OBJS)
+	$(MKDIR) bin
+	$(AR) rcs $@ $^
+
+$(SRCS:.c=.d):%.d:%.c
+	$(CC) $(CFLAGS) -MM $< >$@
+
+include $(SRCS:.c=.d)
+
+.PHONY: clean
+clean:
+	-${RM} ${TARGET_LIB} ${OBJS} $(SRCS:.c=.d) $(SRCS:.c=.gcno) $(SRCS:.c=.gcda) $(SRCS:.c=.gcov)
