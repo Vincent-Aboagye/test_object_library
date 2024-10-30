@@ -1,7 +1,7 @@
 // fuzz_circle.c
 #include <stdint.h>
 #include <stddef.h>
-#include "circle.h"
+#include "include/circle.h"
 
 // Fuzz target for circle_surface and circle_perimeter functions
 int LLVMFuzzerTestOneInput(const uint8_t *Data, size_t Size) {
